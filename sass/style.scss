@@ -22,6 +22,27 @@ $filter-invert: brightness(0) saturate(100%) invert(88%) sepia(1%) saturate(34%)
 body{
     font-family: 'Ubuntu', sans-serif;
     background-color: $background;
+
+    // &::before {
+    //     --line: color-mix(in lch, canvasText 25%, transparent);
+    //     --size: 30px;
+    //     content: '';
+    //     height: 100vh;
+    //     width: 100vw;
+    //     position: fixed;
+    //     background: linear-gradient(
+    //                 90deg,
+    //                 var(--line) 1px,
+    //                 transparent 1px var(--size)
+    //             )
+    //             0 -5vmin / var(--size) var(--size),
+    //         linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
+    //                 --size
+    //             ) var(--size);
+    //     mask: linear-gradient(-90deg, transparent 45%, #e0e0e0);
+    //     top: 0;
+    //     z-index: 1;
+    // }
 }
 
 .boxSlider{
@@ -43,6 +64,7 @@ body{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: 2;
 
             width: 90vw;
             height: 90vh;
@@ -58,7 +80,8 @@ body{
                     top: 60px;
                     left: 0;
                     width: 600px;
-                    overflow: hidden;
+                    height: calc(85%);
+                    overflow: auto;
                     
                     .logo{
                         width: 130px;
@@ -338,6 +361,20 @@ body{
                     right: -20px;
 
                     filter: $filter-invert;
+
+                    z-index: 0;
+                }
+
+                @media screen and (max-width:1500px) {
+                    .teams_background{
+                        width: 500px;
+                    }
+                }
+
+                @media screen and (max-width:1300px) {
+                    .teams_background{
+                        width: 250px;
+                    }
                 }
 
                 .character{
@@ -346,6 +383,13 @@ body{
                     right: 20vw;
 
                     height: 90vh;
+                    z-index: 3;
+                }
+
+                @media screen and (max-width:1300px) {
+                    .character{
+                        right: 8vw;
+                    }
                 }
 
                 .costs{
@@ -492,5 +536,41 @@ body{
                 }
             }
         }
+    }
+}
+
+.pc-only{
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $background-radial;
+    z-index: 9;
+
+    .ccenter{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        width: 80vw;
+
+        img{
+            width: 150px;
+            filter: $filter;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .pc-only{
+        display: block;
     }
 }
