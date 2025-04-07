@@ -2,7 +2,7 @@
 
 This page presents a character in a minimalist sci-fi style. You can use it and adapt it to your needs. I'm open to any suggestions for improving the code, especially for making it responsive. Feel free to contribute!
 
-[See with github pages]()
+[See with github pages](https://kerogs.github.io/sci-fi_design/)
 
 ## Preview
 ![Preview](assets/preview.png)
